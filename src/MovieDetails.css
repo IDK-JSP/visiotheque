@@ -1,0 +1,28 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 400px;
+    padding-top: 10px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.card-title{
+    display: flex;
+    gap: 10px;
+}
+
+.card button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.card button:hover{
+    background: black;
+}
