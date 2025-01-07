@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState, useTransition} from 'react';
 import MovieItem from "../component/MovieItems";
 import Grid2 from "@mui/material/Grid2";
-import {useTheme} from "@mui/material";
+import {Box, useTheme} from "@mui/material";
 import {get} from "../api/api";
 
 interface Collection {
@@ -31,12 +31,15 @@ const Dashboard: FC<{}> = ({}) => {
     return (
         <>
             {movieCollection &&
-                    <Grid2 className={"items"} container spacing={3}>
+                    <Box className={"items"} sx={{
+                        display : "flex",
+                        flexDirection : "row",
+                        flexWrap : "wrap", gap: 10, justifyContent : "center"}}>
                         {movieCollection.results.map((film) => (
-                            <MovieItem movie={film}/>
+                            <MovieItem  movie={film}/>
                         ))
                         }
-                    </Grid2>
+                    </Box>
             }
         </>
     );

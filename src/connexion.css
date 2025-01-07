@@ -1,0 +1,28 @@
+.connexion-form{
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.connexion-form input{
+    border: none;
+    width: 30vh;
+    height: 6vh;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px;
+}
+.connexion-form button {
+    border: none;
+    background: black;
+    color: white;
+    font-size: 20px;
+    height: 8vh;
+    width: 15vh;
+    border-radius: 25px;
+
+}
+.connexion-form button:hover{
+    background: gray;
+}

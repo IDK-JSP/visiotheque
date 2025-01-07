@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {get} from "../api/api";
 import {useLocation} from "react-router";
-import {Grid, Typography} from "@mui/material";
+import {Box, Grid, Typography} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Grid2 from "@mui/material/Grid2";
 import "../MovieDetails.css"
@@ -9,7 +9,7 @@ import "../MovieDetails.css"
 const MovieDetails: FC<{}> = ({}) => {
     const [movie, setMovie] = useState<any | null>(null); // Stocker le film récupéré
     const location = useLocation();
-    const id = Number(location.pathname.split("/").pop()); // Récupérer l'ID du film à partir de l'URL
+    const id = location.pathname.split("/").pop(); // Récupérer l'ID du film à partir de l'URL
 
     // Fonction pour récupérer les détails du film
     const fetchMovieDetails = async () => {
@@ -28,11 +28,11 @@ const MovieDetails: FC<{}> = ({}) => {
     }
 
     return (
-        <div>
-            <Grid2 className={"card"}>
+        <div className={"center"}>
+            <Box className={"card"}>
                 <CardMedia className={"card-media"}
                            component="img"
-                           width="350px"
+                           sx={{width: "250px"}}
                            image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
                            alt={"Affiche du film" + movie.title}
                 />
@@ -43,11 +43,10 @@ const MovieDetails: FC<{}> = ({}) => {
                     </div>
                     <div className={"write"}>
                         <Typography variant="body1">{movie.overview}</Typography>
-                        <Typography variant="body2">Release Date: {movie.release_date}</Typography>
                         <Typography variant="body2">Rating: {movie.vote_average}</Typography>
                     </div>
                 </div>
-            </Grid2>
+            </Box>
         </div>
     );
 };

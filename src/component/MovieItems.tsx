@@ -9,15 +9,16 @@ import CardActionArea from '@mui/material/CardActionArea';
 import Grid from '@mui/material/Grid2';
 import {MovieItem as MovieType} from "../@types/movieItem"
 import {useNavigate} from "react-router";
+import {Box} from "@mui/material";
 
 const MovieItem: FC<{ movie: MovieType }> = ({movie}) => {
     let navigate = useNavigate();
     return (
-        <Grid size={3}>
+        <Box sx={{width: 300, height: 500}}>
             <button className={"button"} onClick={() => navigate("/MoviesDetails/" + movie.id)}>
                 <Card>
                     <CardActionArea>
-                        <CardMedia
+                        <CardMedia sx={{height: "auto", width:  300}}
                             component="img"
                             height="auto"
                             image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
@@ -32,7 +33,7 @@ const MovieItem: FC<{ movie: MovieType }> = ({movie}) => {
                     </CardActionArea>
                 </Card>
             </button>
-        </Grid>
+        </Box>
     );
 };
 

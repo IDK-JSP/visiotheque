@@ -1,15 +1,21 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
 .card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 25px;
-    padding: 400px;
-    padding-top: 10px;
+    padding-top: 10vh;
+    max-width: 135vh;
+    justify-content: center;
 }
 
 .card-content{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    justify-content: center;
 }
 .card-title{
     display: flex;
@@ -25,4 +31,9 @@
 }
 .card button:hover{
     background: black;
+}
+.write{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }

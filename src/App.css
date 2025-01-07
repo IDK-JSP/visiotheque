@@ -22,7 +22,10 @@ body{
 .test{
   border-radius: 50px;
 }
-
+.login-button{
+  border: none;
+  background-color: red;
+}
 }
 .AppBar button:hover{
   background: black;
