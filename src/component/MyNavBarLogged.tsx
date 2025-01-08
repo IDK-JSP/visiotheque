@@ -67,7 +67,7 @@ const NavBarLogged: FC<{}> = ({}) => {
                             logContext?.setIsLogged(false);
                             navigate(page.path);
                         }} key={page.name}>
-                            <Typography sx={{textAlign: 'center'}}>{page.name}</Typography>
+                            <Typography sx={{textAlign: 'center'}}><b>{page.name}</b></Typography>
                         </MenuItem>
                     ))}
                 </Menu>

@@ -13,6 +13,7 @@ import Logged from "./layout/Logged";
 import NotLogged from "./layout/NotLogged";
 import MaListe from "./pages/MaListe";
 import {Button} from "@mui/material";
+import PeopleDetails from "./pages/PeopleDetails";
 
 export const LogContext = createContext<LogContextProps | undefined>(undefined);
 

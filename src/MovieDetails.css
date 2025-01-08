@@ -32,6 +32,12 @@
 .card button:hover{
     background: black;
 }
+.cast{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    opacity: 50%;
+}
 .write{
     display: flex;
     flex-direction: column;
