@@ -8,7 +8,7 @@ axios.defaults.params = {
     api_key: "2bc9a7883ffe9f225bee010bee3d0f67",
     include_adult: true,
     include_video: false,
-    language: "fr-FR"
+    language: "fr-FR",
 }
 /*axios.interceptors.response.use(
     (response) => {
@@ -42,6 +42,15 @@ axios.defaults.params = {
     }
 );*/
 
+export const getCollection = (url: string, config?: {}) => {
+    return axios.get(url, config)
+        .then((response) => {
+            console.log("response", response);
+            return response.data.results;
+        })
+        .catch((error) => {
+        })
+}
 export const get = (url: string, config?: {}) => {
     return axios.get(url, config)
         .then((response) => {

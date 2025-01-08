@@ -1,7 +1,8 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import {useNavigate} from "react-router";
 import {Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography} from "@mui/material";
 import "../App.css";
+import {LogContext} from "../App";
 
 const buttons = [
     {name: "Acceuil", path: "/Home"},
@@ -9,13 +10,13 @@ const buttons = [
     {name: "Ma liste", path: "/MaListe"},
 ];
 
-const NavBar: FC<{}> = ({}) => {
+const NavBarLogged: FC<{}> = ({}) => {
+    const logContext = useContext(LogContext)
     let navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-    const pages = [{name: "Connexion", path: "/Connexion"},
-        {name: "Inscription",path: "/Inscription"}];
+    const pages = [{name: "Déconnexion", path: "/Home"}];
 
     const handleOpenNavMenu = (event: any) => {
         setAnchorElNav(event.currentTarget);
@@ -62,10 +63,11 @@ const NavBar: FC<{}> = ({}) => {
                 >
                     {pages.map((page) => (
                         <MenuItem onClick={() => {
-                            navigate(page.path);
                             handleCloseUserMenu();
+                            logContext?.setIsLogged(false);
+                            navigate(page.path);
                         }} key={page.name}>
-                            <Typography sx={{textAlign: 'center'}}><b>{page.name}</b></Typography>
+                            <Typography sx={{textAlign: 'center'}}>{page.name}</Typography>
                         </MenuItem>
                     ))}
                 </Menu>
@@ -74,4 +76,4 @@ const NavBar: FC<{}> = ({}) => {
     );
 };
 
-export default NavBar;
+export default NavBarLogged;

@@ -18,13 +18,10 @@ const MovieDetails: FC<{}> = ({}) => {
             setMovie(response); // Mettre à jour l'état avec les détails du film
         }
     };
-
-    useEffect(() => {
-        fetchMovieDetails(); // Récupérer les détails du film lors du chargement du composant
-    }, [id]); // Dépendance sur l'ID pour rafraîchir si l'ID change
+   fetchMovieDetails()
 
     if (!movie) {
-        return <div>No movie found</div>; // Afficher un message si le film n'est pas trouvé
+        return <div></div>; // Afficher un message si le film n'est pas trouvé
     }
 
     return (
