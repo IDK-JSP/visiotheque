@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {useNavigate} from "react-router";
 import {Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography} from "@mui/material";
-import "../App.css";
+import "../css/App.css";
 
 const buttons = [
     {name: "Acceuil", path: "/Home"},

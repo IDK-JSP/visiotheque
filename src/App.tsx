@@ -1,7 +1,5 @@
-import React, {createContext, Profiler, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NavBar from "./component/MynavBar";
+import React, {createContext, useState} from 'react';
+import './css/App.css';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import Profile from "../src/pages/Profile"
 import Home from "./pages/Home";
@@ -12,7 +10,6 @@ import Inscription from "./pages/Inscription";
 import Logged from "./layout/Logged";
 import NotLogged from "./layout/NotLogged";
 import MaListe from "./pages/MaListe";
-import {Button} from "@mui/material";
 import PeopleDetails from "./pages/PeopleDetails";
 
 export const LogContext = createContext<LogContextProps | undefined>(undefined);
@@ -33,16 +30,19 @@ function App() {
                                 <Route path="/Connexion" element={<Connexion/>}/>
                                 <Route path="/Inscription" element={<Inscription/>}/>
                                 <Route path="/MoviesDetails/:id" element={<MovieDetails/>}/>
+                                <Route path="/PeopleDetails/:id" element={<PeopleDetails/>}/>
                                 <Route path="/Home" element={<Home/>}/>
                                 <Route path="/Profile" element={<Profile/>}/>
                                 <Route path="/Discover" element={<Discover/>}/>
                                 <Route path="/MaListe" element={<MaListe/>}/>
+
                             </Route>
                             :
                             <Route element={<NotLogged/>}>
                                 <Route path="/Connexion" element={<Connexion/>}/>
                                 <Route path="/Inscription" element={<Inscription/>}/>
                                 <Route path="/MoviesDetails/:id" element={<MovieDetails/>}/>
+                                <Route path="/PeopleDetails/:id" element={<PeopleDetails/>}/>
                                 <Route path="/Home" element={<Home/>}/>
                                 <Route path="/Profile" element={<Profile/>}/>
                                 <Route path="/Discover" element={<Discover/>}/>

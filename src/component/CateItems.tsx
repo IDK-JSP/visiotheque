@@ -1,6 +1,5 @@
 import {FC} from 'react';
-import {Box} from "@mui/material";
-import "../CateItems.css"
+import "../css/CateItems.css"
 const CateItems: FC<{categorie:any}> = ({categorie}) => {
     function filmCate() {
         console.log(categorie.filmes)    }

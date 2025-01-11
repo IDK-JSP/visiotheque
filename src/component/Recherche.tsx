@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import axios from "axios";
 import MovieItem from "./MovieItems";
-import "../Recherche.css"
+import "../css/Recherche.css"
 import {getCollection} from "../api/api";
 import {Box} from "@mui/material";
 import CatList from "./CatList";
-import "../CateItems.css"
+import "../css/CateItems.css"
 
 const SearchMovie = () => {
     const [query, setQuery] = useState("");

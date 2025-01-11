@@ -3,7 +3,7 @@ import {get} from "../api/api";
 import {useLocation, useNavigate} from "react-router";
 import {Box, Button, Rating, Typography} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
-import "../MovieDetails.css";
+import "../css/MovieDetails.css";
 
 const MovieDetails: FC<{}> = ({}) => {
     const [movie, setMovie] = useState<any | null>(null); // Stocker le film récupéré
@@ -92,7 +92,7 @@ const MovieDetails: FC<{}> = ({}) => {
                                 key={actor.id}
                                 variant="outlined"
                                 sx={{marginTop: '10px', marginRight: '10px'}}
-                                onClick={() => handleActorClick(actor.id)} // Quand on clique, on redirige vers la page de l'acteur
+                                onClick={() =>navigate("/PeopleDetails/" + movie.id)} // Quand on clique, on redirige vers la page de l'acteur
                             >
                                 {actor.name}
                             </Button>

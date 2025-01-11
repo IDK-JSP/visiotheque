@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import "../connexion.css"
+import "../css/connexion.css"
 import {Box} from "@mui/material";
 
 const Inscription: FC<{}> = ({}) => {
