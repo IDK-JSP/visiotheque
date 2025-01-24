@@ -1,4 +1,4 @@
-.movie-details {
+.actor-details {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -8,18 +8,7 @@
     justify-content: center;
     align-items: center;
 }
-.movie-details ::-webkit-scrollbar{
-    display: none;
-}
-.background-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backgroundColor: rgba(0, 0, 0, 0.7);
-}
-.card{
+.card {
     display: flex;
     flex-direction: row;
     gap: 25px;
@@ -28,36 +17,18 @@
     justify-content: center;
 }
 
-.card-content{
+.card-content {
     display: flex;
     flex-direction: column;
     gap: 25px;
     justify-content: center;
 }
-.card-title{
+
+.card-title {
     display: flex;
     gap: 10px;
 }
-
-.card button{
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-}
-.cast{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    opacity: 50%;
-}
-
-.cast-button :hover {
-    color: white;
-    opacity: 100%;
-}
-
-.write{
+.write {
     display: flex;
     flex-direction: column;
     gap: 25px;

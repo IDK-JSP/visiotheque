@@ -47,30 +47,16 @@ const MovieDetails: FC<{}> = ({}) => {
     };
 
     return (
-        <Box
-            sx={{
-                position: 'relative', // Nécessaire pour positionner l'overlay
-                backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                minHeight: '100vh', // Prend toute la hauteur de la fenêtre
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
-            className="center"
+        <Box className={"movie-details"}
+             sx={{
+                 backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+             }}
         >
             {/* Overlay avec opacité réduite */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Couleur noire avec opacité 50%
-                }}
+            <Box className={"background-image"}
+                 sx={{
+                     backgroundColor: 'rgba(0, 0, 0, 0.7)', // Couleur noire avec opacité 50%
+                 }}
             />
 
             <Box className="card" sx={{position: 'relative'}}>
@@ -84,18 +70,16 @@ const MovieDetails: FC<{}> = ({}) => {
                 <div className="card-content">
                     <div className="card-title">
                         <Typography variant="h4"><b>{movie.title}</b></Typography>
-                        <button>+</button>
+                        {/*<button>+</button>*/}
                     </div>
                     <div className={"cast"}>
                         {topActors?.map((actor: any) => (
-                            <Button
+                            <button className={"cast-button"}
                                 key={actor.id}
-                                variant="outlined"
-                                sx={{marginTop: '10px', marginRight: '10px'}}
-                                onClick={() =>navigate("/PeopleDetails/" + movie.id)} // Quand on clique, on redirige vers la page de l'acteur
+                                onClick={() => navigate("/PeopleDetails/" + actor.id)} // Quand on clique, on redirige vers la page de l'acteur
                             >
                                 {actor.name}
-                            </Button>
+                            </button>
                         ))}
                     </div>
                     <div className="write">

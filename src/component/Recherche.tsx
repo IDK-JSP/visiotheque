@@ -16,8 +16,7 @@ const SearchMovie = () => {
         if (!query) return;
 
         try {
-           // const list = await axios.get(apiUrl, {
-             //   params: {query: query}});
+
             const list = await getCollection(apiUrl,{params: {query: query}});
 
             if (list) {

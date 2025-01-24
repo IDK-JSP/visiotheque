@@ -1,11 +1,17 @@
 import {FC} from 'react';
 import "../css/CateItems.css"
+import {useNavigate} from "react-router";
+
+
 const CateItems: FC<{categorie:any}> = ({categorie}) => {
+const navigate = useNavigate(); // Utilisation du hook useNavigate
     function filmCate() {
-        console.log(categorie.filmes)    }
+        console.log(categorie.filmes)
+    }
+
 
     return (
-            <button onClick={filmCate}>{categorie.name}</button>
+            <button onClick={() => navigate("/Category/" + categorie.id)}>{categorie.name}</button>
     );
 };
 

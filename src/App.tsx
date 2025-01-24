@@ -11,6 +11,7 @@ import Logged from "./layout/Logged";
 import NotLogged from "./layout/NotLogged";
 import MaListe from "./pages/MaListe";
 import PeopleDetails from "./pages/PeopleDetails";
+import Category from "./pages/Category";
 
 export const LogContext = createContext<LogContextProps | undefined>(undefined);
 
@@ -31,6 +32,7 @@ function App() {
                                 <Route path="/Inscription" element={<Inscription/>}/>
                                 <Route path="/MoviesDetails/:id" element={<MovieDetails/>}/>
                                 <Route path="/PeopleDetails/:id" element={<PeopleDetails/>}/>
+                                <Route path="/Category/:id" element={<Category/>}/>
                                 <Route path="/Home" element={<Home/>}/>
                                 <Route path="/Profile" element={<Profile/>}/>
                                 <Route path="/Discover" element={<Discover/>}/>
@@ -43,6 +45,7 @@ function App() {
                                 <Route path="/Inscription" element={<Inscription/>}/>
                                 <Route path="/MoviesDetails/:id" element={<MovieDetails/>}/>
                                 <Route path="/PeopleDetails/:id" element={<PeopleDetails/>}/>
+                                <Route path="/Category/:id" element={<Category/>}/>
                                 <Route path="/Home" element={<Home/>}/>
                                 <Route path="/Profile" element={<Profile/>}/>
                                 <Route path="/Discover" element={<Discover/>}/>

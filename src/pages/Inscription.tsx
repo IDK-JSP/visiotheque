@@ -5,10 +5,10 @@ import {Box} from "@mui/material";
 const Inscription: FC<{}> = ({}) => {
     return (
 
-        <Box sx={{display: "flex", height: "80vh", justifyContent: "center", alignItems: "center"}}>
+        <Box className={"connexion-container"}>
             <div className={"connexion-form"}>
                 <input placeholder={"E-mail"}/>
-                <Box sx={{display:"flex",flexDirection:"column", gap:2}}>
+                <Box className={"password-form"} >
                     <input placeholder={"Mot de passe"}/>
                     <input placeholder={"Confirmer le mot de passe "}/>
                 </Box>

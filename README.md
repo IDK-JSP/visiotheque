@@ -1,4 +1,4 @@
-Choses manquantes :
+**Choses manquantes :**
 
 * Favoris/Ajout à ma liste
 * Le profil (inscription mais je préfère attendre le back)
@@ -9,14 +9,15 @@ Choses manquantes :
 * Responsivité
 
 
-Optimisation :
+**Optimisation :**
 
 * Le chargement de la page d'accueil n'est pas propre, l'ajout d'un loading serait bien.
 * Dans "Découvrir", lorsqu'une recherche est effectuée mais que l'input est vide, les catégories devraient pouvoir
 * réapparaître. Donc, l'utilisation d'un observable serait l'idéal.
+* Refecto certaine fonctionnalités (Les boutons de pages qui peuvent être des composants, etc...)
 
 
-Visuel :
+**Visuel :**
 
 * Refonte de la barre de recherche
 * Refonte de la page d'accueil (ajout de carousel, liste horizontale, etc.)

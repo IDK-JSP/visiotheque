@@ -19,16 +19,16 @@ const MovieItem: FC<{ movie: MovieType }> = ({movie}) => {
             <button className={"button"} onClick={() => navigate("/MoviesDetails/" + movie.id)}>
                 <Card>
                     <CardActionArea>
-                        {movie.poster_path? <CardMedia sx={{height: "auto", width: 300}}
-                                                       component="img"
-                                                       height="auto"
-                                                       image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
-                                                       alt={"Affiche du film" + movie.title}
-                        />: <CardMedia sx={{height: "auto", width: 300}}
-                                       component="img"
-                                       height="auto"
-                                       image={persona}
-                                       alt={"Affiche du film" + movie.title}
+                        {movie.poster_path ? <CardMedia className={"movie-image"}
+                                                        component="img"
+                                                        height="auto"
+                                                        image={"https://image.tmdb.org/t/p/original" + movie.poster_path}
+                                                        alt={"Affiche du film" + movie.title}
+                        /> : <CardMedia className={"movie-image"}
+                                        component="img"
+                                        height="auto"
+                                        image={persona}
+                                        alt={"Affiche du film" + movie.title}
                         />
 
                         }

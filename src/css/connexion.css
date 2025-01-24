@@ -1,3 +1,9 @@
+.connexion-container{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
 .connexion-form{
     width: 12%;
     display: flex;
@@ -25,4 +31,9 @@
 }
 .connexion-form button:hover{
     background: gray;
+}
+.password-form{
+    display: flex;
+    flex-direction: column;
+    gap:20px
 }

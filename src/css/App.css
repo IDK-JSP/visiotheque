@@ -1,7 +1,6 @@
 .App{
   background: rgb(38, 36, 36);
   color: white;
-
 }
 body{
   background-color: rgb(38, 36, 36);
@@ -32,6 +31,4 @@ body{
 .AppBar button:hover{
   background: black;
 }
-.items{
-  padding: 0 100px 50px 100px;
-}
+

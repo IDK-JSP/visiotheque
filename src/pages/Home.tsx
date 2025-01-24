@@ -35,11 +35,7 @@ const Dashboard: FC = () => {
                 <Box
                     className={"items"}
                     sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        flexWrap: "wrap",
                         gap: 10,
-                        justifyContent: "center",
                     }}
                 >
                     {movieCollection.results.map((film) => (

@@ -12,7 +12,7 @@ const Connexion: FC<{}> = ({}) => {
     }
     const logContext = useContext(LogContext)
     return (
-        <Box sx={{display:"flex",height:"80vh", justifyContent: "center", alignItems: "center"}}>
+        <Box className={"connexion-container"} >
             <div className={"connexion-form"}>
                 <input placeholder={"E-mail"}/>
                 <input placeholder={"Mot de passe"}/>

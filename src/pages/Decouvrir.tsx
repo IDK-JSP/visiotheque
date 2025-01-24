@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import "../css/CateItems.css"
+import "../css/Decouvrir.css"
 import Recherche from "../component/Recherche";
 
 
