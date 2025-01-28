@@ -21,7 +21,7 @@ interface LogContextProps {
 }
 
 function App() {
-    const [isLogged, setIsLogged] = useState(false);
+    const [isLogged, setIsLogged] = useState(true);
     return (
         <div className="App">
             <BrowserRouter>

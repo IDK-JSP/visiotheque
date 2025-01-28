@@ -51,6 +51,9 @@
     gap: 5px;
     opacity: 50%;
 }
+.cast button:hover{
+    cursor: pointer;
+}
 
 .cast-button :hover {
     color: white;

@@ -15,7 +15,7 @@ import persona from "../qTDpbZnyRjLhrY6v5NuQDWOrDIL.jpg"
 const MovieItem: FC<{ movie: MovieType }> = ({movie}) => {
     let navigate = useNavigate();
     return (
-        <Box sx={{width: 300, height: 500}}>
+        <Box sx={{width: 350, height: 500}}>
             <button className={"button"} onClick={() => navigate("/MoviesDetails/" + movie.id)}>
                 <Card>
                     <CardActionArea>
@@ -26,7 +26,7 @@ const MovieItem: FC<{ movie: MovieType }> = ({movie}) => {
                                                         alt={"Affiche du film" + movie.title}
                         /> : <CardMedia className={"movie-image"}
                                         component="img"
-                                        height="auto"
+                                        height="200px"
                                         image={persona}
                                         alt={"Affiche du film" + movie.title}
                         />

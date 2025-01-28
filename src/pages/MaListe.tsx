@@ -1,9 +1,10 @@
 import {FC} from 'react';
+import Slider from "../component/Slider";
 
 const MaListe: FC<{}> = ({}) => {
     return (
         <div>
-            <h1>Ma liste</h1>
+            <Slider/>
         </div>
     );
 };
