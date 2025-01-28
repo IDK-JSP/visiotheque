@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useRef, useState, useTransition} from 'react';
 import {get} from "../api/api";
 import MovieItem from "./MovieItems";
-import "../css/Slider.css"
+import "../css/Slider.css";
 
-import loading from "./chargement-removebg-preview.png"; // Assurez-vous que le chemin est correct
+ // Assurez-vous que le chemin est correct
 
-const ITEM_WIDTH = 250;
+const ITEM_WIDTH = 500;
 
 interface Collection {
     results: any[];
@@ -15,13 +15,13 @@ const Slider: FC = () => {
     const [movieCollection, setMovieCollection] = useState<Collection | undefined>(undefined);
     const [isPending, startTransition] = useTransition();
     const [scrollPosition, setScrollPosition] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null); // Correction du type de la ref
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const handleScroll = (scrollAmount: number) => {
         if (containerRef.current) {
-            const newScrollPosition = containerRef.current.scrollLeft + scrollAmount; // Calculer la nouvelle position
-            setScrollPosition(newScrollPosition); // Mettre à jour le state si nécessaire
-            containerRef.current.scrollLeft = newScrollPosition; // Déplacer la position de défilement
+            const newScrollPosition = containerRef.current.scrollLeft + scrollAmount;
+            setScrollPosition(newScrollPosition);
+            containerRef.current.scrollLeft = newScrollPosition;
         }
     };
 
@@ -38,11 +38,19 @@ const Slider: FC = () => {
     }, []);
 
     if (!movieCollection) {
-        return <img src={loading}/>;
+        return <div className={"loading-container"}><img className={"loading-logo"} src={"chargement-removebg-preview.png"}/></div>;
     }
 
     return (
-        <div className={"container"}>
+        <div className={"slider-container"} style={{position: "relative"}}>
+            {/* Les boutons de défilement à gauche et à droite */}
+            <button
+                className="scroll-button left"
+                onClick={() => handleScroll(-ITEM_WIDTH)}
+            >
+                ←
+            </button>
+
             <div
                 ref={containerRef}
                 style={{
@@ -57,10 +65,13 @@ const Slider: FC = () => {
                     ))}
                 </div>
             </div>
-            <div className={"actions-buttons"}>
-                <button onClick={() => handleScroll(-ITEM_WIDTH)}>←</button>
-                <button onClick={() => handleScroll(ITEM_WIDTH)}>→</button>
-            </div>
+
+            <button
+                className="scroll-button right"
+                onClick={() => handleScroll(ITEM_WIDTH)}
+            >
+                →
+            </button>
         </div>
     );
 };

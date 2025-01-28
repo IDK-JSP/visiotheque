@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
 }
-.container ::-webkit-scrollbar{
+.slider-container ::-webkit-scrollbar{
     display: none;
 }
 .content-box{
@@ -16,4 +16,47 @@
 }
 .button {
     width: 250px;
+}
+
+/* Container principal du slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading-logo{
+    width: 70%;
+    height: 70%;
+}
+
+/* Style des boutons de défilement */
+.scroll-button {
+    width: 75px;
+    height: 430px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-58%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+/* Bouton de défilement à gauche */
+.left {
+    left: 10px;
+}
+
+/* Bouton de défilement à droite */
+.right {
+    right: 10px;
 }
