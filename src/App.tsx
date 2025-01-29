@@ -37,6 +37,8 @@ function App() {
                                 <Route path="/Profile" element={<Profile/>}/>
                                 <Route path="/Discover" element={<Discover/>}/>
                                 <Route path="/MaListe" element={<MaListe/>}/>
+                                <Route path="*" element={<Navigate to="/home" replace/>}/>
+
 
                             </Route>
                             :

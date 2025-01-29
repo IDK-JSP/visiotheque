@@ -5,6 +5,7 @@ import {LogContext} from "../App";
 import {useNavigate} from "react-router";
 
 const Connexion: FC<{}> = ({}) => {
+
     let navigate = useNavigate();
     function logIn() {
         logContext?.setIsLogged(true);
