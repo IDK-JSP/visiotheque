@@ -5,6 +5,7 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import "../css/Home.css";
 import {get} from "../api/api"
+import axios from "axios";
 
 interface Collection {
     results: any[];
@@ -26,6 +27,13 @@ const Dashboard: FC = () => {
     };
 
     useEffect(() => {
+        axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+        axios.defaults.params = {
+            api_key: "2bc9a7883ffe9f225bee010bee3d0f67",
+            include_adult: true,
+            include_video: false,
+            language: "fr-FR",
+        }
         hydrate();
     }, []);
 

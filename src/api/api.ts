@@ -1,6 +1,5 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.withCredentials = false;
@@ -13,7 +12,7 @@ axios.defaults.params = {
 
 
 export const getCollection = (url: string, config?: {}) => {
-    return axios.get(url, config)
+    return axios.get('https://api.themoviedb.org/3' + url, config)
         .then((response) => {
             return response.data.results;
         })
