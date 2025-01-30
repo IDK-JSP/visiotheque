@@ -32,7 +32,6 @@ const MaListe: FC<{}> = ({}) => {
     return (
         <div>
             <Slider/>
-            <button onClick={()=>{postFavoris()}}>bouton</button>
         </div>
     );
 };

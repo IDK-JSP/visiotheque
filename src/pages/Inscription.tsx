@@ -1,13 +1,21 @@
-import { FC, useState } from "react";
+import {FC, useContext, useState} from "react";
 import "../css/connexion.css";
 import { Box } from "@mui/material";
 import { postVisiotheque } from "../api/api";
+import {LogContext} from "../App";
+import {useNavigate} from "react-router";
 
 const Inscription: FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let navigate = useNavigate();
     const [confirm,setConfirm]= useState("")
+    const logContext = useContext(LogContext)
 
+    function logIn() {
+        logContext?.setIsLogged(true);
+        navigate("/home")
+    }
     const registerUser = (email: string, password: string) => {
         if (password === confirm && email != "" && password !=""){
         const data = {
@@ -16,6 +24,9 @@ const Inscription: FC = () => {
         };
         const test = postVisiotheque("/users", data);
         console.log(test);
+
+        logIn()
+
         }else{
             console.log("pas le même mot de passe")
         }
