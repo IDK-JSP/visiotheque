@@ -5,8 +5,7 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.withCredentials = false;
 
 export const postVisiotheque = (url: string, data: any,  config?: {}) => {
-    axios.defaults.baseURL = 'http://localhost:8080';
-    return axios.post(url, data, config)
+    return axios.post('http://localhost:8080' + url, data, config)
         .then((response) => {
             return response.data;
         })
@@ -17,6 +16,7 @@ export const postVisiotheque = (url: string, data: any,  config?: {}) => {
 }
 
 export const getCollection = (url: string, config?: {}) => {
+
     return axios.get('https://api.themoviedb.org/3' + url, config)
         .then((response) => {
             return response.data.results;
@@ -26,8 +26,13 @@ export const getCollection = (url: string, config?: {}) => {
 }
 
 export const get = (url: string, config?: {}) => {
-
-    return axios.get(url, config)
+    axios.defaults.params = {
+        api_key: "2bc9a7883ffe9f225bee010bee3d0f67",
+        include_adult: false,
+        include_video: false,
+        language: "fr-FR"
+    }
+    return axios.get('https://api.themoviedb.org/3' +url , config)
         .then((response) => {
             return response.data;
         })

@@ -4,6 +4,7 @@ import {useLocation, useNavigate} from "react-router";
 import {Box, Button, Rating, Typography} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import "../css/MovieDetails.css";
+import AddListButton from "../component/AddListButton";
 
 const MovieDetails: FC<{}> = ({}) => {
     const [movie, setMovie] = useState<any | null>(null); // Stocker le film récupéré
@@ -70,7 +71,9 @@ const MovieDetails: FC<{}> = ({}) => {
                 <div className="card-content">
                     <div className="card-title">
                         <Typography variant="h4"><b>{movie.title}</b></Typography>
-                        {/*<button>+</button>*/}
+                        <AddListButton movie_id={parseInt(movie.id)}
+                                       title={movie.title}
+                                       poster_path={movie.poster_path} />
                     </div>
                     <div className={"cast"}>
                         {topActors?.map((actor: any) => (

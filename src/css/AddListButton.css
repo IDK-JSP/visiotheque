@@ -1,0 +1,9 @@
+.add-list{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.add-list:hover{
+    cursor: pointer;
+    background: gray;
+}
