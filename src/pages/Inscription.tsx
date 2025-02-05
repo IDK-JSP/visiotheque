@@ -1,7 +1,7 @@
 import {FC, useContext, useState} from "react";
 import "../css/connexion.css";
-import { Box } from "@mui/material";
-import { postVisiotheque } from "../api/api";
+import {Box} from "@mui/material";
+import {postVisiotheque} from "../api/api";
 import {LogContext} from "../App";
 import {useNavigate} from "react-router";
 
@@ -9,25 +9,25 @@ const Inscription: FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     let navigate = useNavigate();
-    const [confirm,setConfirm]= useState("")
+    const [confirm, setConfirm] = useState("")
     const logContext = useContext(LogContext)
 
     function logIn() {
-        logContext?.setIsLogged(true);
-        navigate("/home")
+        navigate("/connexion")
     }
+
     const registerUser = (email: string, password: string) => {
-        if (password === confirm && email != "" && password !=""){
-        const data = {
-            email: email,
-            password: password
-        };
-        const test = postVisiotheque("/users", data);
-        console.log(test);
+        if (password === confirm && email != "" && password != "") {
+            const data = {
+                email: email,
+                password: password
+            };
+            const test = postVisiotheque("/auth/register", data);
+            console.log(test);
 
-        logIn()
+            logIn()
 
-        }else{
+        } else {
             console.log("pas le même mot de passe")
         }
     };
@@ -50,8 +50,8 @@ const Inscription: FC = () => {
                     <input
                         type="password"
                         value={confirm}
-                        onChange={(e)=>setConfirm(e.target.value)}
-                        placeholder="Confirmer le mot de passe" />
+                        onChange={(e) => setConfirm(e.target.value)}
+                        placeholder="Confirmer le mot de passe"/>
                 </Box>
                 <button onClick={() => registerUser(email, password)}>Inscription</button>
             </div>
